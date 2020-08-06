@@ -1,6 +1,7 @@
 import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
+import { initIPCListeners } from './modules';
 
 let win: BrowserWindow = null;
 const args = process.argv.slice(1),
@@ -19,7 +20,7 @@ function createWindow(): BrowserWindow {
     height: size.height,
     webPreferences: {
       nodeIntegration: true,
-      allowRunningInsecureContent: (serve) ? true : false,
+      allowRunningInsecureContent: serve,
     },
   });
 
@@ -82,3 +83,5 @@ try {
   // Catch Error
   // throw e;
 }
+
+initIPCListeners()
