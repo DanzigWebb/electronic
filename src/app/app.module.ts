@@ -1,6 +1,3 @@
-import 'reflect-metadata';
-import '../polyfills';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 
 import { AppComponent } from './app.component';
+
 import { HeaderModule } from '@app/main/header/header.module';
+import { SidebarModule } from '@app/main/sidebar/sidebar.module';
 import { FoldersModule } from '@app/main/folders/folders.module';
 
 
@@ -29,6 +28,7 @@ import { FoldersModule } from '@app/main/folders/folders.module';
     HomeModule,
     FoldersModule,
     AppRoutingModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
