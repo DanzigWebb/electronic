@@ -1,0 +1,21 @@
+<mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-list-item
+            *ngFor="let file of files"
+            class="folder__item">
+
+        <!-- list content -->
+        <mat-icon [svgIcon]="file.icon" class="folder__icon"></mat-icon>
+
+        <button
+                *ngIf="file.type === 'html' || file.type === 'table'"
+                mat-icon-button
+                matTooltip="Меню">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <div mat-line>{{file.name}}</div>
+        <div class="folder__date" mat-line> {{file.lastModifier | date}} </div>
+        <!-- list content end -->
+    </mat-list-item>
+</mat-nav-list>
