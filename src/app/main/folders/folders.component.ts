@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IFile } from '../../core/services/folder/helpers/types';
-import { FolderService } from '../../core/services';
-
+import { IFile } from '@app/core/services/folder/helpers/types';
+import { FolderService } from '@app/core/services';
 
 @Component({
   selector   : 'app-folders',
