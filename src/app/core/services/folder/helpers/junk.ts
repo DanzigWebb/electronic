@@ -13,6 +13,7 @@ const blacklist = [
   '^\\._.*',
   '^\\.Spotlight-V100(?:$|\\/)',
   '\\.Trashes',
+  '\\.config',
   '^__MACOSX$',
 
   '~$',
