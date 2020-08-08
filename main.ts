@@ -2,6 +2,9 @@ import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
+const Store = require("electron-store")
+const store = new Store({ name: "settings" })
+
 let win: BrowserWindow = null;
 const args  = process.argv.slice(1),
       serve = args.some(val => val === '--serve');
@@ -9,14 +12,14 @@ const args  = process.argv.slice(1),
 function createWindow(): BrowserWindow {
 
   const electronScreen = screen;
-  const size = electronScreen.getPrimaryDisplay().workAreaSize;
+  // const size = electronScreen.getPrimaryDisplay().workAreaSize;
 
   // Create the browser window.
   const defaultSize = {width: 1000, height: 600};
-  // const windowSize = store.get('settings.window.size') || defaultSize
+  const windowSize = store.get('settings.window.size') || defaultSize
 
   win = new BrowserWindow({
-    ...defaultSize,
+    ...windowSize,
     webPreferences: {
       nodeIntegration:             true,
       allowRunningInsecureContent: serve
