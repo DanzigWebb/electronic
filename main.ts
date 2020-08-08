@@ -3,8 +3,8 @@ import * as path from 'path';
 import * as url from 'url';
 
 let win: BrowserWindow = null;
-const args = process.argv.slice(1),
-  serve = args.some(val => val === '--serve');
+const args  = process.argv.slice(1),
+      serve = args.some(val => val === '--serve');
 
 function createWindow(): BrowserWindow {
 
@@ -12,15 +12,15 @@ function createWindow(): BrowserWindow {
   const size = electronScreen.getPrimaryDisplay().workAreaSize;
 
   // Create the browser window.
+  const defaultSize = {width: 1000, height: 600};
+  // const windowSize = store.get('settings.window.size') || defaultSize
+
   win = new BrowserWindow({
-    x: 0,
-    y: 0,
-    width: size.width,
-    height: size.height,
+    ...defaultSize,
     webPreferences: {
-      nodeIntegration: true,
-      allowRunningInsecureContent: serve,
-    },
+      nodeIntegration:             true,
+      allowRunningInsecureContent: serve
+    }
   });
 
   if (serve) {
@@ -36,7 +36,7 @@ function createWindow(): BrowserWindow {
     win.loadURL(url.format({
       pathname: path.join(__dirname, 'dist/index.html'),
       protocol: 'file:',
-      slashes: true
+      slashes:  true
     }));
   }
 
