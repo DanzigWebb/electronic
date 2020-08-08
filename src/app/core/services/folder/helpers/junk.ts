@@ -28,5 +28,3 @@ export const junk = {
   is:  (filename) => regex.test(filename),
   not: (filename) => !junk.is(filename)
 };
-
-
