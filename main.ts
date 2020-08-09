@@ -2,8 +2,8 @@ import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
-const Store = require("electron-store")
-const store = new Store({ name: "settings" })
+const Store = require('electron-store');
+const store = new Store({name: 'settings'});
 
 let win: BrowserWindow = null;
 const args  = process.argv.slice(1),
@@ -16,13 +16,14 @@ function createWindow(): BrowserWindow {
 
   // Create the browser window.
   const defaultSize = {width: 1000, height: 600};
-  const windowSize = store.get('settings.window.size') || defaultSize
+  const windowSize = store.get('settings.window.size') || defaultSize;
 
   win = new BrowserWindow({
     ...windowSize,
     webPreferences: {
       nodeIntegration:             true,
-      allowRunningInsecureContent: serve
+      allowRunningInsecureContent: serve,
+      enableRemoteModule:          true
     }
   });
 

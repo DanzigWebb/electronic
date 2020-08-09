@@ -21,7 +21,7 @@ export class FoldersNavigationComponent implements OnInit {
   public searchCtl: FormControl = new FormControl();
 
   constructor(
-    private folder: FolderService,
+    public folder: FolderService,
     private store: StoreService,
     private foldersTpl: FoldersTplService
   ) {
@@ -44,7 +44,8 @@ export class FoldersNavigationComponent implements OnInit {
   }
 
   openFolder() {
-    shell.showItemInFolder(this.folder.dir.getValue());
+    const path = this.folder.dirFiles.getValue()[0].absolutePath || this.folder.dir.getValue()
+    shell.showItemInFolder(path);
   }
 
   updateFolder() {

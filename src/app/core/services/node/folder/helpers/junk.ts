@@ -17,6 +17,7 @@ const blacklist = [
   '\\.idea',
   '\\.editorconfig',
   '\\.localized',
+  '\\.vscode',
   '^__MACOSX$',
 
   '~$',

@@ -13,7 +13,7 @@ export class FolderService {
   public dirFiles: BehaviorSubject<IFile[]> = new BehaviorSubject([]);
   public dir: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  private currentDir: string;
+  public currentDir: string;
 
   constructor() {
   }
