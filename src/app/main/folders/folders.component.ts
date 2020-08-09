@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IFile } from '@app/core/services/folder/helpers/types';
 import { FolderService } from '@app/core/services';
 
 @Component({
@@ -10,15 +9,12 @@ import { FolderService } from '@app/core/services';
 
 export class FoldersComponent implements OnInit {
 
-  files: IFile[] = []
-
   constructor(
-    private folder: FolderService
+    public folder: FolderService
   ) {
   }
 
   ngOnInit(): void {
-    this.files = this.folder.scan('/Users/aleksandr/Documents/projects')
   }
 
 }
