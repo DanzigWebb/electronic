@@ -27,6 +27,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     // material
     MatSliderModule,
+    MatExpansionModule,
     MatSidenavModule,
     MatToolbarModule,
     MatBottomSheetModule,

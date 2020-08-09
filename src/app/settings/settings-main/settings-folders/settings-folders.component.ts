@@ -13,7 +13,7 @@ export class SettingsFoldersComponent implements OnInit {
 
   public folders: string[] = this.store.extendFolders.value;
 
-  constructor(private store: StoreService, private ref: ChangeDetectorRef) {
+  constructor(private store: StoreService) {
   }
 
   ngOnInit(): void {
@@ -28,13 +28,11 @@ export class SettingsFoldersComponent implements OnInit {
         return;
       }
       this.store.addExtendFolder(path);
-      this.ref.detectChanges();
     });
   }
 
   removeFolder(index: number) {
     this.store.removeExtendFolder(index);
-    this.ref.detectChanges();
   }
 
   getNameFolder(folderPath) {

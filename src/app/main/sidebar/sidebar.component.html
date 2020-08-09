@@ -1,19 +1,7 @@
 <div class="sidebar">
     <section class="sidebar__section">
-        <mat-nav-list>
-            <mat-list-item (click)="getFolder('documents')">
-                <mat-icon mat-list-icon>folder</mat-icon>
-                <span>Documents</span>
-            </mat-list-item>
-            <mat-list-item (click)="getFolder('downloads')">
-                <mat-icon mat-list-icon>folder</mat-icon>
-                <span>Downloads</span>
-            </mat-list-item>
-            <mat-list-item (click)="getFolder('desktop')">
-                <mat-icon mat-list-icon>folder</mat-icon>
-                <span>Desktop</span>
-            </mat-list-item>
-        </mat-nav-list>
+        <app-sidebar-folders></app-sidebar-folders>
+
         <mat-divider></mat-divider>
     </section>
 

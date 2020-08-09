@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FolderService } from '@app/core/services';
 import { IFile } from '@app/core/services/folder/helpers/types';
 import { HeaderService } from '@app/main/header/header.service';
+import { StoreService } from '@app/core/services/store/store.service';
 
 @Component({
   selector:    'app-folders',
@@ -13,11 +14,13 @@ export class FoldersComponent implements OnInit {
 
   constructor(
     public folder: FolderService,
-    public header: HeaderService
+    public header: HeaderService,
+    private store: StoreService
   ) {
   }
 
   ngOnInit(): void {
+    this.folder.scan(this.store.defaultPath.getValue())
   }
 
   scanFile(file: IFile) {

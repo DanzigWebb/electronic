@@ -1,0 +1,15 @@
+<mat-nav-list>
+    <mat-list-item (click)="getDefault()">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span>Home Directory</span>
+    </mat-list-item>
+
+    <mat-list-item (click)="getFolder('downloads')">
+        <mat-icon mat-list-icon>cloud_download</mat-icon>
+        <span>Downloads</span>
+    </mat-list-item>
+    <mat-list-item (click)="getFolder('desktop')">
+        <mat-icon mat-list-icon>computer</mat-icon>
+        <span>Desktop</span>
+    </mat-list-item>
+</mat-nav-list>
