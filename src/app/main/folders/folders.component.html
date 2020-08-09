@@ -1,6 +1,6 @@
 <mat-nav-list class="folders">
     <mat-list-item
-            *ngFor="let file of folder.currentFolder | async"
+            *ngFor="let file of folder.dirFiles | async"
             (click)="scanFile(file)"
             class="folder__item">
 

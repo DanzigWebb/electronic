@@ -1,0 +1,9 @@
+@import "vars";
+
+.header {
+    
+    &__nav {
+        margin-left: auto;
+        @include flex(row, flex-end);
+    }
+}

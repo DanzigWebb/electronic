@@ -8,13 +8,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class FolderService {
 
-  public currentFolder: BehaviorSubject<IFile[]> = new BehaviorSubject([]);
+  public dirFiles: BehaviorSubject<IFile[]> = new BehaviorSubject([]);
 
   constructor() {
   }
 
   scan(path: string): void {
-    this.currentFolder.next(checkFolderFiles(path))
+    const files: IFile[] = checkFolderFiles(path);
+    this.dirFiles.next(files)
   }
 
 }
