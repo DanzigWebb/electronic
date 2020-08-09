@@ -14,19 +14,20 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from '@app/main/header/header.module';
 import { SidebarModule } from '@app/main/sidebar/sidebar.module';
 import { FoldersModule } from '@app/main/folders/folders.module';
+import { SettingsModule } from '@app/settings/settings.module';
 
 
 @NgModule({
   declarations: [AppComponent],
   imports:      [
     BrowserModule,
-    FormsModule,
     HttpClientModule,
     CoreModule,
     SharedModule,
     HeaderModule,
     HomeModule,
     FoldersModule,
+    SettingsModule,
     AppRoutingModule,
     SidebarModule
   ],

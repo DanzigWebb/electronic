@@ -1,0 +1,13 @@
+<mat-list>
+    <mat-list-item>
+        <mat-icon mat-list-icon>file_copy</mat-icon>
+        <span class="settings__title" mat-line>Перевод</span>
+        <span class="settings__subtitle" mat-line>Название переведенного файла</span>
+        <mat-form-field>
+            <input [formControl]="outputFile" matInput>
+        </mat-form-field>
+        <button (click)="changeOutputName()" [disabled]="outputFile.pristine" mat-icon-button>
+            <mat-icon>check</mat-icon>
+        </button>
+    </mat-list-item>
+</mat-list>

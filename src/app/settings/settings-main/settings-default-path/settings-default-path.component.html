@@ -1,0 +1,15 @@
+<mat-list>
+    <mat-list-item>
+        <mat-icon mat-list-icon>attach_file</mat-icon>
+        <span class="settings__title" mat-line>Домашняя папка</span>
+        <span class="settings__subtitle" mat-line>В этой папке хранятся лендинги, ожидаемые перевода</span>
+    </mat-list-item>
+    <mat-list-item>
+        <small class="settings__descr">Выбрать <br> путь:</small>
+        <div (click)="setDefaultPath()" class="settings__dirlabel">
+            <mat-icon [inline]="true">folder</mat-icon>
+            <pre>{{storeDefaultPath}}</pre>
+        </div>
+    </mat-list-item>
+    <br>
+</mat-list>

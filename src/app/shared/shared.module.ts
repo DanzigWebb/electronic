@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
 // material
 import { MatSliderModule } from '@angular/material/slider';
@@ -35,6 +35,7 @@ import { MatButtonModule } from '@angular/material/button';
   exports:      [
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     // material
     MatSliderModule,
     MatSidenavModule,

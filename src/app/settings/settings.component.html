@@ -1,0 +1,43 @@
+<mat-toolbar>
+    <button (click)="close()" mat-icon-button>
+        <mat-icon>close</mat-icon>
+    </button>
+    <h2> Настройки </h2>
+</mat-toolbar>
+
+<div class="settings__content">
+    <mat-tab-group dynamicHeight>
+        <!-- Main settings -->
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>settings</mat-icon>
+                <span class="tab__title">Основные</span>
+            </ng-template>
+            <app-settings-main></app-settings-main>
+        </mat-tab>
+        <!-- Translate settings -->
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>g_translate</mat-icon>
+                <span class="tab__title">Переводы</span>
+            </ng-template>
+            <app-settings-translater></app-settings-translater>
+        </mat-tab>
+        <!-- Scrapper settings -->
+        <!--<mat-tab>-->
+        <!--    <ng-template mat-tab-label>-->
+        <!--        <mat-icon>cloud_download</mat-icon>-->
+        <!--        <span class="tab__title">Скраппер</span>-->
+        <!--    </ng-template>-->
+        <!--    &lt;!&ndash;<app-settings-scrapper></app-settings-scrapper>&ndash;&gt;-->
+        <!--</mat-tab>-->
+        <!--&lt;!&ndash; Integrations settings &ndash;&gt;-->
+        <!--<mat-tab>-->
+        <!--    <ng-template mat-tab-label>-->
+        <!--        <mat-icon>integration_instructions</mat-icon>-->
+        <!--        <span class="tab__title">Интеграции</span>-->
+        <!--    </ng-template>-->
+        <!--    &lt;!&ndash;<app-settings-integrations></app-settings-integrations>&ndash;&gt;-->
+        <!--</mat-tab>-->
+    </mat-tab-group>
+</div>

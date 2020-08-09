@@ -1,0 +1,9 @@
+<mat-list>
+    <mat-list-item>
+        <mat-icon mat-list-icon>palette</mat-icon>
+        <span class="settings__title" mat-line>Тема</span>
+        <span class="settings__subtitle" mat-line>Выбор цветовой схемы по умолчанию</span>
+        <mat-slide-toggle (change)="changeTheme($event.checked)" [checked]="theme === 'dark'"
+                          color="primary">{{theme}}</mat-slide-toggle>
+    </mat-list-item>
+</mat-list>

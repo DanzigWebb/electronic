@@ -1,17 +1,30 @@
 <div class="sidebar">
-    <mat-nav-list>
-        <mat-list-item (click)="getFolder('documents')">
-            <mat-icon mat-list-icon>folder</mat-icon>
-            <span>Documents</span>
-        </mat-list-item>
-        <mat-list-item (click)="getFolder('downloads')">
-            <mat-icon mat-list-icon>folder</mat-icon>
-            <span>Downloads</span>
-        </mat-list-item>
-        <mat-list-item (click)="getFolder('desktop')">
-            <mat-icon mat-list-icon>folder</mat-icon>
-            <span>Desktop</span>
-        </mat-list-item>
-    </mat-nav-list>
-    <mat-divider></mat-divider>
+    <section class="sidebar__section">
+        <mat-nav-list>
+            <mat-list-item (click)="getFolder('documents')">
+                <mat-icon mat-list-icon>folder</mat-icon>
+                <span>Documents</span>
+            </mat-list-item>
+            <mat-list-item (click)="getFolder('downloads')">
+                <mat-icon mat-list-icon>folder</mat-icon>
+                <span>Downloads</span>
+            </mat-list-item>
+            <mat-list-item (click)="getFolder('desktop')">
+                <mat-icon mat-list-icon>folder</mat-icon>
+                <span>Desktop</span>
+            </mat-list-item>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+    </section>
+
+    <section class="sidebar__section">
+        <mat-divider></mat-divider>
+
+        <mat-nav-list class="sidebar__settings">
+            <mat-list-item (click)="openBottomSheet()">
+                <mat-icon mat-list-icon>settings</mat-icon>
+                <span>Settings</span>
+            </mat-list-item>
+        </mat-nav-list>
+    </section>
 </div>
