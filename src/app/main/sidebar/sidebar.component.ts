@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.folder.dirFiles.value.length) {
-      this.getFolder('desktop')
+      this.getFolder('desktop');
     }
   }
 

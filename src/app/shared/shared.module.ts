@@ -31,8 +31,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, FormsModule],
-  exports: [
+  imports:      [CommonModule, FormsModule],
+  exports:      [
     BrowserAnimationsModule,
     FormsModule,
     // material
@@ -57,7 +57,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatListModule,
     MatSnackBarModule,
     MatTabsModule,
-    MatProgressSpinnerModule,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedModule {

@@ -1,11 +1,11 @@
 <mat-toolbar class="header">
-    <button mat-icon-button (click)="sidebar.toggle()">
+    <button (click)="sidebar.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
     </button>
     <span>App</span>
 
     <div class="header__nav">
-        <button mat-icon-button (click)="folder.back()">
+        <button (click)="folder.back()" mat-icon-button>
             <mat-icon>arrow_back_ios</mat-icon>
         </button>
         <app-header-search></app-header-search>

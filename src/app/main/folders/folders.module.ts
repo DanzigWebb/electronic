@@ -9,7 +9,7 @@ import { FolderSearchPipeModule } from './folder-search-pipe/folder-search-pipe.
 
 @NgModule({
   declarations: [FoldersComponent],
-  imports     : [
+  imports:      [
     CommonModule,
     FoldersRoutingModule,
     SharedModule,

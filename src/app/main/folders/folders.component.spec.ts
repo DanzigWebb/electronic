@@ -14,7 +14,7 @@ describe('FoldersComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture   = TestBed.createComponent(FoldersComponent);
+    fixture = TestBed.createComponent(FoldersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

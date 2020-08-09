@@ -4,10 +4,10 @@ import { FolderSearchPipe } from './folder-search.pipe';
 
 @NgModule({
   declarations: [FolderSearchPipe],
-  imports     : [
+  imports:      [
     CommonModule
   ],
-  exports     : [FolderSearchPipe]
+  exports:      [FolderSearchPipe]
 })
 export class FolderSearchPipeModule {
 }

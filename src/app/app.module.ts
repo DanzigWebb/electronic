@@ -18,7 +18,7 @@ import { FoldersModule } from '@app/main/folders/folders.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
+  imports:      [
     BrowserModule,
     FormsModule,
     HttpClientModule,
@@ -30,7 +30,8 @@ import { FoldersModule } from '@app/main/folders/folders.module';
     AppRoutingModule,
     SidebarModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers:    [],
+  bootstrap:    [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}

@@ -6,7 +6,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class HeaderService {
 
-  searchInput: BehaviorSubject<string> = new BehaviorSubject<string>('')
+  searchInput: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  constructor() { }
+  constructor() {
+  }
 }

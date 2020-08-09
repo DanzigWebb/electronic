@@ -12,14 +12,14 @@ export class SidebarService {
   }
 
   open() {
-    this.state.next(true)
+    this.state.next(true);
   }
 
   close() {
-    this.state.next(false)
+    this.state.next(false);
   }
 
   toggle() {
-    this.state.next(!this.state.getValue())
+    this.state.next(!this.state.getValue());
   }
 }

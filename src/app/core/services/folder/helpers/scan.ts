@@ -28,4 +28,4 @@ export const checkFolderFiles = (pathToLand: string): IFile[] => {
     }
     return 0;
   });
-}
+};

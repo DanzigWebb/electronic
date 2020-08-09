@@ -4,9 +4,9 @@ import { IFile } from '@app/core/services/folder/helpers/types';
 import { HeaderService } from '@app/main/header/header.service';
 
 @Component({
-  selector   : 'app-folders',
+  selector:    'app-folders',
   templateUrl: './folders.component.html',
-  styleUrls  : ['./folders.component.scss']
+  styleUrls:   ['./folders.component.scss']
 })
 
 export class FoldersComponent implements OnInit {
@@ -23,8 +23,8 @@ export class FoldersComponent implements OnInit {
   scanFile(file: IFile) {
     const {absolutePath, type} = file;
     if (type === 'folder') {
-      this.folder.scan(absolutePath)
-      return
+      this.folder.scan(absolutePath);
+      return;
     }
   }
 }

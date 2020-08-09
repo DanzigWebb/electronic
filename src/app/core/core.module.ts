@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
-  imports: [
+  imports:      [
     CommonModule
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+}
