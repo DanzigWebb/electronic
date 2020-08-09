@@ -1,0 +1,18 @@
+<mat-nav-list class="folders">
+    <mat-list-item
+            (click)="scanFile(file)"
+            *ngFor="let file of (folder.dirFiles | async) | folderSearch:(header.searchInput | async)"
+            class="folder__item">
+
+        <mat-icon [svgIcon]="file.icon"></mat-icon>
+
+        <div mat-line>
+            <span>{{file.name}}</span>
+        </div>
+
+        <div class="folder__date" mat-line>
+            <span>{{file.lastModifier | date}}</span>
+        </div>
+
+    </mat-list-item>
+</mat-nav-list>

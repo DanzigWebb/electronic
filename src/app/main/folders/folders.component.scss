@@ -1,4 +1,27 @@
+@import "vars";
+
+$padding: 10px;
+
 .folders {
-    max-width: 700px;
     margin: 0 auto;
+    padding: $padding;
+    
+    &__wrapper {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+.panel {
+    position: sticky;
+    top: 0;
+    
+    margin-top: -$padding;
+    margin-left: -$padding;
+    margin-right: -$padding;
+    padding: 0 2 * $padding;
+    z-index: 1;
+    
+    @include setColor(background, 'fill');
+    @include flex(row, space-between);
 }

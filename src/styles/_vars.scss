@@ -58,6 +58,13 @@ $d-warn: mat-color($dark-warn);
       #{$property}: $d-warn;
     }
   }
+  @if $color == fill {
+      #{$property}: #fff;
+    
+      :host-context(.dark-theme) & {
+          #{$property}: #424242;
+      }
+  }
 }
 // flex
 @mixin flex($direction, $content: flex-start, $item: stretch, $wrap: nowrap) {

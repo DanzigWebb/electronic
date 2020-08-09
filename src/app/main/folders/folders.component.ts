@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FolderService } from '@app/core/services';
-import { IFile } from '@app/core/services/folder/helpers/types';
-import { HeaderService } from '@app/main/header/header.service';
 import { StoreService } from '@app/core/services/store/store.service';
+
+const {shell} = window.require('electron');
+
+type foldersTpl = 'list' | 'grid'
+const storeTpl = 'folders.template';
 
 @Component({
   selector:    'app-folders',
@@ -12,22 +15,28 @@ import { StoreService } from '@app/core/services/store/store.service';
 
 export class FoldersComponent implements OnInit {
 
+  template: foldersTpl = this.store.get(storeTpl) || 'list';
+
   constructor(
-    public folder: FolderService,
-    public header: HeaderService,
+    private folder: FolderService,
     private store: StoreService
   ) {
   }
 
   ngOnInit(): void {
-    this.folder.scan(this.store.defaultPath.getValue())
+    this.folder.scan(this.store.defaultPath.getValue());
   }
 
-  scanFile(file: IFile) {
-    const {absolutePath, type} = file;
-    if (type === 'folder') {
-      this.folder.scan(absolutePath);
-      return;
-    }
+  setTemplate(type: foldersTpl) {
+    this.store.set(storeTpl, type);
+    this.template = type;
+  }
+
+  openFolder() {
+    shell.showItemInFolder(this.folder.dir.getValue());
+  }
+
+  updateFolder() {
+    this.folder.update();
   }
 }

@@ -22,7 +22,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -39,6 +39,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ReactiveFormsModule,
     // material
     MatSliderModule,
+    MatRippleModule,
     MatExpansionModule,
     MatSidenavModule,
     MatToolbarModule,

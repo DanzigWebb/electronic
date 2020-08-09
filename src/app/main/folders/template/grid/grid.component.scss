@@ -1,0 +1,32 @@
+@import "vars";
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    padding: 10px 0;
+    
+    &__item {
+        @include flex(column, flex-start, center);
+        cursor: pointer;
+        overflow: hidden;
+        padding: 6px;
+        border-radius: 3px;
+    }
+    
+    &__title {
+        font-weight: normal;
+        font-size: 12px;
+        text-align: center;
+        padding-top: 8px;
+    
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    &__icon {
+        width: 55px;
+        height: 55px;
+    }
+}

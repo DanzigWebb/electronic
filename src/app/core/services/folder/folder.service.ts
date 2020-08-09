@@ -13,10 +13,13 @@ export class FolderService {
   public dirFiles: BehaviorSubject<IFile[]> = new BehaviorSubject([]);
   public dir: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
+  private currentDir: string;
+
   constructor() {
   }
 
   scan(path: string): void {
+    this.currentDir = path;
     this.dir.next(path);
     const files: IFile[] = checkFolderFiles(path);
     this.dirFiles.next(files);
@@ -25,6 +28,10 @@ export class FolderService {
   back() {
     const dirPath = path.dirname(this.dir.value);
     this.scan(dirPath);
+  }
+
+  update() {
+    this.scan(this.currentDir)
   }
 
 }

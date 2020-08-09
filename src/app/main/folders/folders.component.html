@@ -1,18 +1,31 @@
-<mat-nav-list class="folders">
-    <mat-list-item
-            (click)="scanFile(file)"
-            *ngFor="let file of (folder.dirFiles | async) | folderSearch:(header.searchInput | async)"
-            class="folder__item">
+<div class="folders">
+    <div class="panel">
 
-        <mat-icon [svgIcon]="file.icon"></mat-icon>
-
-        <div mat-line>
-            <span>{{file.name}}</span>
+        <div class="panel__left">
+            <button mat-icon-button matTooltip="List"
+                    [color]="template === 'list' && 'primary'"
+                    (click)="setTemplate('list')">
+                <mat-icon>list</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Grid"
+                    [color]="template === 'grid' && 'primary'"
+                    (click)="setTemplate('grid')">
+                <mat-icon>view_module</mat-icon>
+            </button>
         </div>
 
-        <div class="folder__date" mat-line>
-            <span>{{file.lastModifier | date}}</span>
+        <div class="panel__right">
+            <button (click)="updateFolder()" class="links__update" mat-icon-button matTooltip="Обновить директорию">
+                <mat-icon>autorenew</mat-icon>
+            </button>
+            <button (click)="openFolder()" class="links__update" mat-icon-button matTooltip="Открыть в системе">
+                <mat-icon>open_in_browser</mat-icon>
+            </button>
         </div>
+    </div>
 
-    </mat-list-item>
-</mat-nav-list>
+    <div class="folders__wrapper" [ngSwitch]="template">
+        <folders-list *ngSwitchCase="'list'"></folders-list>
+        <folders-grid *ngSwitchCase="'grid'"></folders-grid>
+    </div>
+</div>
