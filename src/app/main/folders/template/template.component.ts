@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FolderService } from '@app/core/services';
 import { HeaderService } from '@app/main/header/header.service';
-import { IFile } from '@app/core/services/folder/helpers/types';
 import { FoldersTplService } from '@app/main/folders/folders-tpl.service';
+import { IFile } from '@app/core/services/node/folder/helpers/types';
+import { FolderService } from '@app/core/services/node';
 
 @Component({
   template: '',

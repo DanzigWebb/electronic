@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ElectronService, FolderService } from '@app/core/services';
-import { StoreService } from '@app/core/services/store/store.service';
+import { StoreService } from '@app/core/services/node/store/store.service';
+import { FolderService } from '@app/core/services/node';
+import { ElectronService } from '@app/core/services';
 
 @Component({
   selector:    'app-sidebar-folders',

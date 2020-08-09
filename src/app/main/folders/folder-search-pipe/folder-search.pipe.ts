@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IFile } from '../../../core/services/folder/helpers/types';
+import { IFile } from '../../../core/services/node/folder/helpers/types';
 
 @Pipe({
   name: 'folderSearch'

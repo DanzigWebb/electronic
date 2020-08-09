@@ -1,9 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FolderService } from '@app/core/services';
-import { StoreService } from '@app/core/services/store/store.service';
 import { FoldersTplService } from '@app/main/folders/folders-tpl.service';
 import { FormControl } from '@angular/forms';
 import { FoldersTemplate } from '@app/main/folders/folders';
+import { FolderService, StoreService } from '@app/core/services/node';
 
 const {shell} = window.require('electron');
 

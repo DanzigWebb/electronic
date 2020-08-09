@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { StoreService } from '@app/core/services/store/store.service';
+import { StoreService } from '@app/core/services/node/store/store.service';
 
 @Component({
   selector:    'app-settings-output-name',

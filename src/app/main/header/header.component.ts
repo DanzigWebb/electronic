@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarService } from '@app/core/services/sidebar/sidebar.service';
-import { FolderService } from '@app/core/services';
+import { FolderService } from '@app/core/services/node';
+import { SidebarService } from '@app/core/services';
 
 @Component({
   selector:    'app-header',
