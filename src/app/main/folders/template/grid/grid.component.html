@@ -6,5 +6,6 @@
 
         <mat-icon class="grid__icon" [svgIcon]="file.icon" color="primary"></mat-icon>
         <span class="grid__title">{{file.name}}</span>
+        <span class="grid__date">{{file.lastModifier | date:'dd/MM/yy'}}</span>
     </div>
 </div>
