@@ -8,10 +8,11 @@ import { FolderSearchPipeModule } from './folder-search-pipe/folder-search-pipe.
 import { GridComponent } from './template/grid/grid.component';
 import { TemplateComponent } from './template/template.component';
 import { ListComponent } from './template/list/list.component';
+import { FoldersNavigationComponent } from './folders-navigation/folders-navigation.component';
 
 
 @NgModule({
-  declarations: [FoldersComponent, GridComponent, TemplateComponent, ListComponent],
+  declarations: [FoldersComponent, GridComponent, TemplateComponent, ListComponent, FoldersNavigationComponent],
   imports:      [
     CommonModule,
     FoldersRoutingModule,

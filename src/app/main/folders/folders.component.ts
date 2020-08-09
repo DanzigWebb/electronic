@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FolderService } from '@app/core/services';
 import { StoreService } from '@app/core/services/store/store.service';
+import { FoldersTemplate } from '@app/main/folders/folders';
 
-const {shell} = window.require('electron');
-
-type foldersTpl = 'list' | 'grid'
 const storeTpl = 'folders.template';
 
 @Component({
@@ -15,7 +13,7 @@ const storeTpl = 'folders.template';
 
 export class FoldersComponent implements OnInit {
 
-  template: foldersTpl = this.store.get(storeTpl) || 'list';
+  template: FoldersTemplate = this.store.get(storeTpl) || 'list';
 
   constructor(
     private folder: FolderService,
@@ -27,16 +25,7 @@ export class FoldersComponent implements OnInit {
     this.folder.scan(this.store.defaultPath.getValue());
   }
 
-  setTemplate(type: foldersTpl) {
-    this.store.set(storeTpl, type);
+  setTemplate(type: FoldersTemplate) {
     this.template = type;
-  }
-
-  openFolder() {
-    shell.showItemInFolder(this.folder.dir.getValue());
-  }
-
-  updateFolder() {
-    this.folder.update();
   }
 }

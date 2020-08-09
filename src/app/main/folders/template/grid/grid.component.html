@@ -2,7 +2,7 @@
     <div class="grid__item"
          matRipple
          (click)="scanFile(file)"
-         *ngFor="let file of (folder.dirFiles | async) | folderSearch:(header.searchInput | async)">
+         *ngFor="let file of (folder.dirFiles | async) | folderSearch:(search.searchInput | async)">
 
         <mat-icon class="grid__icon" [svgIcon]="file.icon" color="primary"></mat-icon>
         <span class="grid__title">{{file.name}}</span>
