@@ -14,6 +14,8 @@ const blacklist = [
   '^\\.Spotlight-V100(?:$|\\/)',
   '\\.Trashes',
   '\\.config',
+  '\\.idea',
+  '\\.editorconfig',
   '\\.localized',
   '^__MACOSX$',
 

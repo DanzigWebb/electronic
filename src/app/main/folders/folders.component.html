@@ -2,20 +2,19 @@
     <mat-divider></mat-divider>
     <mat-list-item
             *ngFor="let file of folder.currentFolder | async"
+            (click)="scanFile(file)"
             class="folder__item">
 
-        <!-- list content -->
-        <mat-icon [svgIcon]="file.icon" class="folder__icon"></mat-icon>
 
-        <button
-                *ngIf="file.type === 'html' || file.type === 'table'"
-                mat-icon-button
-                matTooltip="Меню">
-            <mat-icon>more_vert</mat-icon>
-        </button>
+        <mat-icon [svgIcon]="file.icon"></mat-icon>
 
-        <div mat-line>{{file.name}}</div>
-        <div class="folder__date" mat-line> {{file.lastModifier | date}} </div>
-        <!-- list content end -->
+        <div mat-line>
+            <span>{{file.name}}</span>
+        </div>
+
+        <div class="folder__date" mat-line>
+            <span>{{file.lastModifier | date}}</span>
+        </div>
+
     </mat-list-item>
 </mat-nav-list>

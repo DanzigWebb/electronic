@@ -9,7 +9,7 @@ export const checkFolderFiles = (pathToLand: string): IFile[] => {
   const defaultType = {icon: 'file-question', type: 'undefined'};
   const getFilType = (extname: string): FileType => fileTypes.find(type => type.trigger.includes(extname)) || defaultType;
 
-  return filesInPath.map((item) => {
+  const allFiles: IFile[] = filesInPath.map((item) => {
     const fileExtname = path.extname(item);
     const absolutePath = path.join(folderPath, item);
     const lastModifier = fs.statSync(path.resolve(folderPath, item)).mtime;
@@ -17,5 +17,15 @@ export const checkFolderFiles = (pathToLand: string): IFile[] => {
     const sort = type.type === 'folder' ? 0 : 1;
 
     return {name: item, absolutePath, lastModifier, sort, ...type};
+  });
+
+  return allFiles.sort((a, b) => {
+    if (a.sort > b.sort) {
+      return 1;
+    }
+    if (a.sort < b.sort) {
+      return -1;
+    }
+    return 0;
   });
 }
