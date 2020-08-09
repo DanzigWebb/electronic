@@ -1,0 +1,6 @@
+<mat-form-field class="header__search">
+    <input matInput [formControl]="control" placeholder="Search...">
+    <button type="button" (click)="control.reset()" mat-icon-button matSuffix>
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
