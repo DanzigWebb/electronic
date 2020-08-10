@@ -12,7 +12,10 @@ $padding: 10px;
     z-index: 1;
     
     @include setColor(background, 'fill');
-    @include flex(row, space-between);
+    
+    &__row {
+        @include flex(row, space-between);
+    }
     
     &__column {
         &.right {
@@ -35,5 +38,27 @@ $padding: 10px;
         .mat-icon {
             font-size: 22px;
         }
+        
+        &.back {
+            .mat-icon {
+                font-size: 18px;
+            }
+        }
+    }
+    
+    &__path {
+        position: sticky;
+        top: 0;
+        height: 30px;
+        padding: 0 10px;
+        
+        margin-left: -$padding;
+        margin-right: -$padding;
+        margin-top: -$padding;
+        
+        opacity: .7;
+        
+        @include setColor(background, 'fill');
+        @include flex(row, $item: center)
     }
 }

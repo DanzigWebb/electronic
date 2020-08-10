@@ -1,46 +1,52 @@
 <div class="panel">
-    <div class="panel__column">
-        <button mat-icon-button matTooltip="List"
-                [color]="template === 'list' && 'primary'"
-                (click)="setTemplate('list')">
-            <mat-icon>list</mat-icon>
-        </button>
-        <button mat-icon-button matTooltip="Grid"
-                [color]="template === 'grid' && 'primary'"
-                (click)="setTemplate('grid')">
-            <mat-icon>view_module</mat-icon>
-        </button>
+    <div class="panel__path">
+        <span>{{folder.currentDir.split('/').slice(1).join(' > ')}}</span>
     </div>
-
-    <div class="panel__column right">
-        <button (click)="updateFolder()"
-                class="panel__icon small"
-                mat-icon-button
-                matTooltip="Обновить директорию">
-            <mat-icon>autorenew</mat-icon>
-        </button>
-
-        <button (click)="openFolder()"
-                class="panel__icon small"
-                mat-icon-button
-                matTooltip="Открыть в системе">
-            <mat-icon>open_in_browser</mat-icon>
-        </button>
-    </div>
-
-    <div class="panel__column">
-        <button class="panel__icon small"
-                mat-icon-button
-                (click)="folder.back()"
-                matTooltip="Назад">
-            <mat-icon>arrow_back_ios</mat-icon>
-        </button>
-
-        <mat-form-field class="panel__search">
-            <input matInput [formControl]="searchCtl" placeholder="Search...">
-            <button mat-icon-button matSuffix type="button">
-                <mat-icon>close</mat-icon>
+    <mat-divider></mat-divider>
+    <div class="panel__row">
+        <div class="panel__column">
+            <button class="panel__icon back"
+                    mat-icon-button
+                    (click)="folder.back()"
+                    matTooltip="Назад">
+                <mat-icon>arrow_back_ios</mat-icon>
             </button>
-        </mat-form-field>
+
+            <mat-form-field class="panel__search">
+                <input matInput [formControl]="searchCtl" placeholder="Search...">
+                <button mat-icon-button matSuffix type="button">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+
+        <div class="panel__column">
+            <button mat-icon-button matTooltip="List"
+                    [color]="template === 'list' && 'primary'"
+                    (click)="setTemplate('list')">
+                <mat-icon>list</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Grid"
+                    [color]="template === 'grid' && 'primary'"
+                    (click)="setTemplate('grid')">
+                <mat-icon>view_module</mat-icon>
+            </button>
+        </div>
+
+        <div class="panel__column right">
+            <button (click)="updateFolder()"
+                    class="panel__icon small"
+                    mat-icon-button
+                    matTooltip="Обновить директорию">
+                <mat-icon>autorenew</mat-icon>
+            </button>
+
+            <button (click)="openFolder()"
+                    class="panel__icon small"
+                    mat-icon-button
+                    matTooltip="Открыть в системе">
+                <mat-icon>open_in_browser</mat-icon>
+            </button>
+        </div>
     </div>
 </div>
