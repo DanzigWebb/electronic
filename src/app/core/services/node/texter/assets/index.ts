@@ -14,7 +14,7 @@ export const saveFile = (fileName: string, data: any): Promise<void> => {
   });
 };
 
-export const getCheerio = (buffer: Buffer): CheerioStatic => cheerio.load(buffer, {decodeEntities: false});
+export const getCheerio = (buffer: Buffer | string): CheerioStatic => cheerio.load(buffer, {decodeEntities: false});
 
 export const getCheerioFromFs = async (pathToFile: string): Promise<CheerioStatic> => {
   const buffer = await getFile(pathToFile);

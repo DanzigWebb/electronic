@@ -31,11 +31,19 @@ export class TemplateComponent implements OnInit {
       case 'html':
         this.extractText(absolutePath);
         return
+      case 'table':
+        this.translateText(absolutePath);
+        return
     }
   }
 
   async extractText(absolutePath: string) {
     await this.texter.extract(absolutePath);
     this.folder.update();
+  }
+
+  translateText(absolutePath: string) {
+    this.texter.translate(absolutePath)
+    this.folder.update()
   }
 }
