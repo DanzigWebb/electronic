@@ -1,0 +1,43 @@
+@import "vars";
+
+.dialog {
+    color: grey;
+    min-width: 200px;
+    max-width: 256px;
+
+    // &.notify {}
+    // &.confirm {}
+    &.error { color: red; }
+
+    &.snackbar {
+        word-break: break-word;
+        color: #fff;
+        line-height: 1.4;
+        display: grid;
+        grid-template-columns: 1fr 40px;
+        align-items: center;
+        max-width: none; // from snack-bar-container
+
+        & .mat-icon-button { margin: -10px 0; }
+    }
+
+    &__header {
+        @include flex(row, space-between, center);
+        padding-bottom: 12px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid lightgrey;
+        font-size: 1.2rem;
+    }
+
+    &__content {
+        @include flex(column);
+        font-size: 14px;
+        word-break: break-word;
+        color: dimgrey;
+    }
+
+    &__action {
+        @include flex(row, flex-end);
+        margin-top: 16px;
+    }
+}

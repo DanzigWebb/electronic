@@ -28,6 +28,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { DialogsModule } from '@app/core/services/dialog/dialog.module';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatListModule,
     MatSnackBarModule,
     MatTabsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    DialogsModule
   ]
 })
 export class SharedModule {
