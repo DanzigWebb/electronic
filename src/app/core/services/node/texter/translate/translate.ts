@@ -1,10 +1,30 @@
 import * as path from 'path';
 import xlsx from 'node-xlsx';
-import { getCheerio } from '@app/core/services/node/texter/assets';
+import { getCheerio, saveFile } from '@app/core/services/node/texter/assets';
 
 let errorRows: number = 0;
 
-export function translateTextFromExel(pathToHtml) {
+export async function translateTextFromExel(pathToHtml) {
+  errorRows = 0;
+
+  const html: string = xlsx.parse(pathToHtml)[1].data.join('');
+
+  const textArr: string[][] = xlsx.parse(pathToHtml)[0].data;
+  const strings: string[] = textArr
+    .map(([str]) => str)
+    .filter(str => str);
+
+  const cheerio = getCheerio(html);
+
+  cheerio('title').text(strings[0]);
+  translateBody(cheerio, strings);
+  translateDescription(cheerio, strings);
+  translatePlaceholders(cheerio, strings);
+
+  await saveFile(setOutputName(pathToHtml), cheerio.html());
+}
+
+function setOutputName(pathToHtml: string): string {
   const Store = require('electron-store');
   const store = new Store({name: 'settings'});
 
@@ -16,20 +36,7 @@ export function translateTextFromExel(pathToHtml) {
 
   const getDir = path.dirname(pathToHtml);
 
-  const html: string = xlsx.parse(pathToHtml)[1].data.join('');
-
-  const textArr: string[][] = xlsx.parse(pathToHtml)[0].data;
-  const strings: string[] = textArr
-    .map(([str]) => str)
-    .filter(str => str);
-
-  const cheerio = getCheerio(html);
-
-  cheerio('title').text(strings[0])
-  translateBody(cheerio, strings);
-  translateDescription(cheerio, strings);
-  translatePlaceholders(cheerio, strings);
-  console.log(cheerio('title').html());
+  return path.resolve(getDir, getOutputName());
 }
 
 function translateBody($: CheerioStatic, strings: string[]) {

@@ -8,7 +8,7 @@ export interface TextExtract {
 }
 
 const setWrapper = (index: number): string => (
-  `<i data-translate="${index}"></i>`
+  `<span data-translate="${index}"></span>`
 );
 
 export function extractBodyText(cheerioEl: CheerioElement, count: number = 0): string[] {
@@ -37,7 +37,7 @@ export function extractBodyText(cheerioEl: CheerioElement, count: number = 0): s
   }
 
   return strings;
-};
+}
 
 export function extractPlaceholders(cheerio: CheerioStatic, count: number = 0): string[] {
   const strings: string[] = [];
@@ -49,7 +49,7 @@ export function extractPlaceholders(cheerio: CheerioStatic, count: number = 0): 
     strings.push(placeholderName);
   });
   return strings;
-};
+}
 
 export function extractDescription(cheerio: CheerioStatic, count: number = 0): string[] {
   let strings: string[] = [];

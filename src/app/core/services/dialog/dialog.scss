@@ -11,12 +11,13 @@
 
     &.snackbar {
         word-break: break-word;
-        color: #fff;
         line-height: 1.4;
         display: grid;
         grid-template-columns: 1fr 40px;
         align-items: center;
         max-width: none; // from snack-bar-container
+        
+        @include setColor(color, fill);
 
         & .mat-icon-button { margin: -10px 0; }
     }

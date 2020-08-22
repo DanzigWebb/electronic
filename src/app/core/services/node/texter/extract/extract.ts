@@ -3,7 +3,7 @@ import { TextExtract, textExtract } from '@app/core/services/node/texter/assets/
 import { createExcelBuffer } from '@app/core/services/node/texter/assets/helpers/excel';
 import { saveFile } from '@app/core/services/node/texter/assets';
 
-export async function extractTextFromHtml(pathToHtml: string): Promise<any> {
+export async function extractTextFromHtml(pathToHtml: string): Promise<void> {
   const folder = path.dirname(pathToHtml);
   const folderName = path.basename(folder);
   const fileName = path.basename(pathToHtml);

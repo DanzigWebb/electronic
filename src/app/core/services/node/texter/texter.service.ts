@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
 import { extractTextFromHtml } from '@app/core/services/node/texter/extract/extract';
 import { translateTextFromExel } from '@app/core/services/node/texter/translate/translate';
+import { DialogService } from '@app/core/services';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TexterService {
 
-  constructor() {
+  constructor(private dialog: DialogService) {
   }
 
-  extract(path: string): Promise<void> {
-    return extractTextFromHtml(path);
+  async extract(path: string): Promise<void> {
+    await extractTextFromHtml(path);
+    this.dialog.snackBar('текст вытянут!')
   }
 
-  translate(path: string) {
-    translateTextFromExel(path)
+  async translate(path: string) {
+    await translateTextFromExel(path);
+    this.dialog.snackBar('текст переведен!')
   }
 }
