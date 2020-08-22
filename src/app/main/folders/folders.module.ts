@@ -9,10 +9,11 @@ import { GridComponent } from './template/grid/grid.component';
 import { TemplateComponent } from './template/template.component';
 import { ListComponent } from './template/list/list.component';
 import { FoldersNavigationComponent } from './folders-navigation/folders-navigation.component';
+import { FoldersPathComponent } from './folders-navigation/folders-path/folders-path.component';
 
 
 @NgModule({
-  declarations: [FoldersComponent, GridComponent, TemplateComponent, ListComponent, FoldersNavigationComponent],
+  declarations: [FoldersComponent, GridComponent, TemplateComponent, ListComponent, FoldersNavigationComponent, FoldersPathComponent],
   imports:      [
     CommonModule,
     FoldersRoutingModule,

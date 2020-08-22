@@ -13,11 +13,11 @@ export class TexterService {
 
   async extract(path: string): Promise<void> {
     await extractTextFromHtml(path);
-    this.dialog.snackBar('текст вытянут!')
+    this.dialog.snackBar('текст вытянут!');
   }
 
   async translate(path: string) {
     await translateTextFromExel(path);
-    this.dialog.snackBar('текст переведен!')
+    this.dialog.snackBar('текст переведен!');
   }
 }
